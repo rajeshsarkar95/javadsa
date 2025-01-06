@@ -1,37 +1,22 @@
-public class Main{
-    public static void bubbleSort(int[] array) {
-        int n = array.length;
-        boolean swapped;
-        for (int i = 0; i < n - 1; i++) {
-            swapped = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                    swapped = true;
-                }
-            }
-
-            if (!swapped) {
-                break;
-            }
+public class Main {
+   public static int findMax(int[] array){
+    if(array == null || array.length == 0){
+        throw new IllegalAccessException("Arrat not must be null  or empty");
+    }
+    int max = array[0];
+    for(int i  = 1; i < array.length; i++){
+        if(array[i] > max){
+            max  = array[i]
         }
     }
-
-    public static void main(String[] args) {
-        int[] numbers = {64, 34, 25, 12, 22, 11, 90};
-
-        System.out.println("Unsorted array:");
-        for (int num : numbers) {
-            System.out.print(num + " ");
-        }
-
-        bubbleSort(numbers);
-
-        System.out.println("\nSorted array:");
-        for (int num : numbers) {
-            System.out.print(num + " ");
-        }
-    }
+    return max;
+   }
+   public static void main(String[] args){
+    int[] array1 = {1,2,4,5,6,7,5,10};
+    int[] array2 = {2,34,43,23,43,443}; 
+    int[] array3 = {3,33,434,43,443,243};
+    System.out.println(findMax(array1));
+    System.out.println(findMax(array2));
+    System.out.println(findMax(array3));
+   }
 }
